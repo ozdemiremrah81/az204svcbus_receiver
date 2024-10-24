@@ -1,0 +1,24 @@
+name: .NET Build and Run
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up .NET
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: '8.x' # or your target .NET version
+
+    - name: Build project
+      run: dotnet build --configuration Release
+
+    - name: Run the application with secret
+      env:
+        connectionString: ${{ secrets.connectionString }} # Pass secret as an environment variable
+      run: dotnet run --project ./az204svcbus.csproj
