@@ -10,6 +10,7 @@ ServiceBusSender sender;
 
 // Create the clients that we'll use for sending and processing messages.
 string connectionString = Environment.GetEnvironmentVariable("connectionString");
+string queueName = "az204-queue";
 
 client = new ServiceBusClient(connectionString);
 sender = client.CreateSender(queueName);
