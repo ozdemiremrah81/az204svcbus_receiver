@@ -2,6 +2,15 @@
 using System;
 using System.Threading.Tasks;
 // connection string to your Service Bus namespace
+// the client that owns the connection and can be used to create senders and receivers
+ServiceBusClient client;
+
+// the sender used to publish messages to the queue
+ServiceBusSender sender;
+
+// Create the clients that we'll use for sending and processing messages.
+client = new ServiceBusClient(connectionString);
+sender = client.CreateSender(queueName);
 string connectionString = Environment.GetEnvironmentVariable("connectionString");
 
 ServiceBusProcessor processor;
