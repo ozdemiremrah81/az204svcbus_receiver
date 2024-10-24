@@ -9,9 +9,10 @@ ServiceBusClient client;
 ServiceBusSender sender;
 
 // Create the clients that we'll use for sending and processing messages.
+string connectionString = Environment.GetEnvironmentVariable("connectionString");
+
 client = new ServiceBusClient(connectionString);
 sender = client.CreateSender(queueName);
-string connectionString = Environment.GetEnvironmentVariable("connectionString");
 
 ServiceBusProcessor processor;
 client = new ServiceBusClient(connectionString);
