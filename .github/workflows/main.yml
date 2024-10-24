@@ -21,4 +21,4 @@ jobs:
     - name: Run the application with secret
       env:
         connectionString: ${{ secrets.connectionString }} # Pass secret as an environment variable
-      run: dotnet run --project ./az204svcbus.csproj
+      run: dotnet run --project ./az204svcbus_receiver.csproj
