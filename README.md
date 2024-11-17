@@ -1,0 +1,1 @@
+[![CodeQL](https://github.com/ozdemiremrah81/az204svcbus_receiver/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/ozdemiremrah81/az204svcbus_receiver/actions/workflows/github-code-scanning/codeql)
